@@ -5,14 +5,26 @@
   "repository": "https://github.com/DenisMedeirosSDK/sozei-backend.git",
   "author": "denismedeirossdk <contato.denismedeiros@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.31"
+  },
   "devDependencies": {
+    "@types/express": "^4.17.11",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
-    "eslint": "^7.22.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-import-helpers": "^1.1.0",
-    "prettier": "^2.2.1"
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.3"
   }
 }
