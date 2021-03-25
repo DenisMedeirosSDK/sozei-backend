@@ -1,6 +1,6 @@
 {
   "type": "postgres",
-  "host": "database",
+  "host": "databaseSozei",
   "port": 5432,
   "username": "docker",
   "password": "docker",
