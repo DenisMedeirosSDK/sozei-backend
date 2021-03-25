@@ -1,9 +1,9 @@
 version: "3.7"
 
 services:
-  database:
+  databaseSozei:
     image: postgres
-    container_name: database
+    container_name: databaseSozei
     restart: always
     ports:
       - 5432:5432
