@@ -25,7 +25,7 @@ export default class CreateTools1616671818634 implements MigrationInterface {
           },
           {
             name: 'tags',
-            type: 'varchar'
+            type: 'varchar[]'
           },
           {
             name: 'created_at',
