@@ -1,0 +1,123 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sozei Documentation",
+    "description": "Essa é uma documentação para API REST",
+    "version": "1.0.0",
+    "contact": {
+      "email": "contato.denismedeiros@hotmail.com"
+    }
+  },
+  "paths": {
+    "/tools": {
+      "post": {
+        "tags": [
+          "Tool"
+        ],
+        "summary": "Create new Tool",
+        "description": "Create a new Tool",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "array"
+                  }
+                },
+                "example": {
+                  "title": "MyTool",
+                  "link": "http://localhost:3333",
+                  "description": "My tool for tools",
+                  "tags": [
+                    "Me",
+                    "tool"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Tool"
+        ],
+        "summary": "List all tools",
+        "description": "List all tools",
+        "requestBody": {
+          "responses": {
+            "201": {
+              "description": "Success",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "item": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "link": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "tags": {
+                          "type": "array"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/:id": {
+      "delete": {
+        "tags": [
+          "Tool"
+        ],
+        "summary": "List all tools",
+        "description": "List all tools",
+        "parameters": [
+          {
+            "name": "tool_id",
+            "in": "path",
+            "description": "ID of tool",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
