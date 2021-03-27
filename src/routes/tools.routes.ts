@@ -5,11 +5,15 @@ import { CreateToolController } from '../modules/tools/useCases/createTool/creat
 import { DeleteToolController } from '../modules/tools/useCases/deleteTool/deleteToolController'
 import { ListToolsController } from '../modules/tools/useCases/listTools/listToolsController'
 
+import { ensureAuthenticated } from '../middlewares/ensureAuthenticated'
+
 const toolsRouter = Router()
 
 const createToolController = new CreateToolController()
 const listToolsController = new ListToolsController()
 const deleteToolController = new DeleteToolController()
+
+toolsRouter.use(ensureAuthenticated)
 
 toolsRouter.post('/', celebrate({
   [Segments.BODY]: {
