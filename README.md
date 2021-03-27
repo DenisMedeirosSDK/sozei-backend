@@ -1,11 +1,21 @@
 # SOZEI - Backend - Desenvolvedor Junior
 
-## Requisitos da aplicação
+## Requisitos mínimos da aplicação
 
 * [x] Deve ser possível criar uma nova ferramenta
 * [x] Deve ser possível deletar uma ferramenta
 * [x] Deve ser possível listar todas ferramentas
 * [x] Deve ser possível filtrar ferramentas por tag
+
+## Bonus
+
+* [x] Swagger da aplicação
+* [x] Uso de ferramentas externas que facilitem o seu trabalho
+* [x] Cuidados especiais com otimização, padrões, entre outros
+* [x] Migrations ou script para configuração do banco de dados utilizado
+* [x] Conceitos de SOLID e DDD
+* [x] Conteinerização da aplicação
+* [x] Autenticação e autorização JWT
 
 ---
 ## Ferramentas usadas

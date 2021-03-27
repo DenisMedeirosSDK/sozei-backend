@@ -9,13 +9,95 @@
     }
   },
   "paths": {
+    "/users": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create new User",
+        "description": "Create a new User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "John Doe",
+                  "email": "johndoe@email.com",
+                  "password": "MyPassword"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/sessions": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create new Session",
+        "description": "Create a new Session",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "email": "johndoe@email.com",
+                  "password": "MyPassword"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/tools": {
       "post": {
         "tags": [
           "Tool"
         ],
         "summary": "Create new Tool",
-        "description": "Create a new Tool",
+        "description": "Create a new Tool, user requires authentication",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -37,7 +119,7 @@
                 },
                 "example": {
                   "title": "MyTool",
-                  "link": "http://localhost:3333",
+                  "link": "http://localhost:3000",
                   "description": "My tool for tools",
                   "tags": [
                     "Me",
@@ -59,7 +141,12 @@
           "Tool"
         ],
         "summary": "List all tools",
-        "description": "List all tools",
+        "description": "List all tools, user requires authentication",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "responses": {
             "201": {
@@ -102,7 +189,12 @@
           "Tool"
         ],
         "summary": "List specific by tag",
-        "description": "You can make a listing by tag",
+        "description": "You can make a listing by tag, user requires authentication",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "parameters": [
           {
             "name": "tag",
@@ -154,7 +246,12 @@
           "Tool"
         ],
         "summary": "List all tools",
-        "description": "List all tools",
+        "description": "List all tools, user requires authentication",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "parameters": [
           {
             "name": "id",
@@ -169,6 +266,15 @@
             "description": "Success"
           }
         }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }
