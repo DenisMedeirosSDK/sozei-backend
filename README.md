@@ -45,44 +45,45 @@ cd sozei-backend
 ---
 ## Ambiente local
 
-```bash
+
 
 Instale as dependências:
 
-"npm install"
+``npm install``
 
 Para executar as migrations:
 
-"npm run typeorm migration:run"
+``npm run typeorm migration:run``
 
 Para iniciar a aplicação:
 
-"npm run start"
+``npm run start``
 
-```
 
 ---
 ## Docker
 
-```bash
+Crie a imagem da aplicação
 
-// Dentro do terminal
+``docker build -t <nome da imagem> .``
 
-docker build -t <nome da imagem> .
 
-docker compose up -d
+Execute o docker compose da aplicação
+
+``docker compose up -d``
 
 // Para verificar se esta executando
 
-docker logs sozei -f
+``docker logs sozei -f``
 
-A seguinte mensagem aparecera "Server start on port, 3000"
+// A seguinte mensagem aparecera *"Server start on port, 3000"*
 
-// Execute as  migrations para poder inserir dados no banco
+Execute as  migrations para poder inserir dados no banco
 
-Para executar as migrations "npm run typeorm migration:run"
+Para executar as migrations
 
-```
+``npm run typeorm migration:run``
+
 ---
 ## Documentação de rotas
 
@@ -92,6 +93,3 @@ Também é possível fazer as requisições através do arquivo ``Insomnia_sozei
 [insomnia](https://insomnia.rest/).
 
 Copie o conteúdo do arquivo depois dentro do insomnia terá uma opção **CREATE** clique em *Clipboard*
-
-
-
